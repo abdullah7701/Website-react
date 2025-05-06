@@ -4,27 +4,34 @@ import { useState } from "react";
 
 export default function BankStatement() {
   const [formData, setFormData] = useState({
-    month1: null,
-    month2: null,
-    month3: null,
+    email: "",
+    companyName: "",
+    statement1: null,
+    statement2: null,
+    statement3: null,
+    statement4: null,
     consent: false,
+    isCalifornia: false,
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const accessToken = process.env.HUBSPOT_ACCESS_TOKEN;
+
   const handleInputChange = (e) => {
-    const { name, type, checked, files } = e.target;
+    const { name, type, checked, files, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : type === "file" ? files[0] : null,
+      [name]:
+        type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
   };
 
-  const handleDrop = (e, month) => {
+  const handleDrop = (e, statement) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
-    setFormData((prev) => ({ ...prev, [month]: file }));
+    setFormData((prev) => ({ ...prev, [statement]: file }));
   };
 
   const handleDragOver = (e) => {
@@ -38,8 +45,29 @@ export default function BankStatement() {
     setIsSubmitting(true);
 
     // Validate form
-    if (!formData.month1 || !formData.month2 || !formData.month3) {
-      setError("All three bank statements are required.");
+    const requiredStatements = formData.isCalifornia ? 4 : 3;
+    const statements = [
+      formData.statement1,
+      formData.statement2,
+      formData.statement3,
+      ...(formData.isCalifornia ? [formData.statement4] : []),
+    ].slice(0, requiredStatements);
+
+    if (!formData.email) {
+      setError("Email is required.");
+      setIsSubmitting(false);
+      return;
+    }
+
+
+    if (!formData.companyName) {
+      setError("Company Name is required.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (statements.some((statement) => !statement)) {
+      setError(`All ${requiredStatements} bank statements are required.`);
       setIsSubmitting(false);
       return;
     }
@@ -51,7 +79,7 @@ export default function BankStatement() {
 
     // Validate file types and sizes
     const maxSize = 100 * 1024 * 1024; // 100MB
-    for (const file of [formData.month1, formData.month2, formData.month3]) {
+    for (const file of statements) {
       if (!file.type.includes("pdf")) {
         setError("Only PDF files are allowed.");
         setIsSubmitting(false);
@@ -65,27 +93,98 @@ export default function BankStatement() {
     }
 
     try {
+      // Upload files to HubSpot
       const submitData = new FormData();
-      submitData.append("month1", formData.month1);
-      submitData.append("month2", formData.month2);
-      submitData.append("month3", formData.month3);
+      statements.forEach((statement, index) => {
+        submitData.append(`statement${index + 1}`, statement);
+      });
       submitData.append("consent", formData.consent.toString());
+      submitData.append("isCalifornia", formData.isCalifornia.toString());
 
-      const response = await fetch("/api/hubspot", {
+      const hubspotResponse = await fetch("/api/hubspot", {
         method: "POST",
         body: submitData,
       });
 
-      const result = await response.json();
-      if (result.error) {
-        setError(result.error);
-      } else {
-        // Store file IDs in localStorage
-        localStorage.setItem("hubspotFileIds", JSON.stringify(result.fileIds));
-        setSuccess("Bank statements uploaded successfully!");
+      const hubspotResult = await hubspotResponse.json();
+      if (hubspotResult.error) {
+        setError(hubspotResult.error);
+        setIsSubmitting(false);
+        return;
       }
+
+      localStorage.setItem("hubspotFileIds", JSON.stringify(hubspotResult.fileIds));
+
+      const searchPayload = {
+        filterGroups: [
+          {
+            filters: [
+              {
+                propertyName: "name",
+                operator: "EQ",
+                value: formData.companyName,
+              },
+            ],
+          },
+        ],
+        properties: [
+          "company_email",
+          "name",
+          "upload_bank_statements1",
+          "upload_bank_statements2",
+          "upload_bank_statements3",
+          "upload_bank_statements4",
+        ],
+      };
+
+      const searchResponse = await fetch("/api/hubspot-search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(searchPayload),
+      });
+
+      const searchResult = await searchResponse.json();
+      if (!searchResult.results || searchResult.results.length === 0) {
+        setError("Company not found. Please check the company name.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      const companyId = searchResult.results[0].id;
+
+      // Associate uploaded files with the company
+      const fileUrls = hubspotResult.fileUrls || [];
+      const patchPayload = {
+        properties: {
+          upload_bank_statements__1: fileUrls[0] || null, // Updated property name
+          upload_bank_statements__2: fileUrls[1] || null, // Updated property name
+          upload_bank_statements__3: fileUrls[2] || null, // Updated property name
+          ...(formData.isCalifornia && fileUrls[3]
+            ? { upload_bank_statements__4: fileUrls[3] } // Updated property name
+            : {}),
+        },
+      };
+
+      const patchResponse = await fetch("/api/hubspot-patch", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ companyId, payload: patchPayload }),
+      });
+
+      const patchResult = await patchResponse.json();
+      if (patchResult.error) {
+        setError("Failed to associate files with company.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      setSuccess("Bank statements uploaded and associated successfully!");
     } catch (err) {
-      setError("Failed to upload statements. Please try again.");
+      setError("Failed to process the request. Please try again.");
       console.error(err);
     } finally {
       setIsSubmitting(false);
@@ -100,9 +199,9 @@ export default function BankStatement() {
             <div className="row">
               <div className="col-xl-12">
                 <div className="bank-statement-page__form">
-                  <h3 className="comment-one__title">Upload Last 3 Months Bank Statements</h3>
+                  <h3 className="comment-one__title">Upload Bank Statements</h3>
                   <p>
-                    Upload PDF bank statements for the last three months (max 100MB each). Required fields are marked *.
+                    Upload PDF bank statements {formData.isCalifornia ? "for the last four months" : "for the last three months"} (max 100MB each). Required fields are marked *.
                     <br />
                     <strong>Note:</strong> Your data is secure. See our <a href="/privacy-policy">Privacy Policy</a>.
                   </p>
@@ -117,28 +216,78 @@ export default function BankStatement() {
                         <i className="fas fa-check-circle"></i> {success}
                       </p>
                     )}
-                    {/* Month 1 Upload */}
+                    {/* Email Input */}
                     <div className="row">
                       <div className="col-xl-12">
                         <div className="comment-form__input-box">
-                          <label>Month 1 Bank Statement*</label>
+                          <label>Email*</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            placeholder="Enter your email"
+                            className="text-input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Company Name Input */}
+                    <div className="row">
+                      <div className="col-xl-12">
+                        <div className="comment-form__input-box">
+                          <label>Company Name*</label>
+                          <input
+                            type="text"
+                            name="companyName"
+                            value={formData.companyName}
+                            onChange={handleInputChange}
+                            required
+                            placeholder="Enter your company name"
+                            className="text-input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* California Checkbox */}
+                    <div className="row">
+                      <div className="col-xl-12">
+                        <div className="comment-form__input-box consent-box">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="isCalifornia"
+                              checked={formData.isCalifornia}
+                              onChange={handleInputChange}
+                            />
+                            California region (requires 4 bank statements)
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Statement 1 Upload */}
+                    <div className="row">
+                      <div className="col-xl-12">
+                        <div className="comment-form__input-box">
+                          <label>Bank Statement 1*</label>
                           <div
                             className="file-upload-dropzone"
-                            onDrop={(e) => handleDrop(e, "month1")}
+                            onDrop={(e) => handleDrop(e, "statement1")}
                             onDragOver={handleDragOver}
                           >
                             <input
                               type="file"
-                              name="month1"
+                              name="statement1"
                               accept=".pdf"
                               onChange={handleInputChange}
                               required
-                              id="month1"
+                              id="statement1"
                               className="file-upload-input"
                             />
-                            <label htmlFor="month1" className="file-upload-label">
-                              {formData.month1 ? (
-                                <span>{formData.month1.name}</span>
+                            <label htmlFor="statement1" className="file-upload-label">
+                              {formData.statement1 ? (
+                                <span>{formData.statement1.name}</span>
                               ) : (
                                 <span>Drag & drop or click to upload PDF</span>
                               )}
@@ -147,28 +296,28 @@ export default function BankStatement() {
                         </div>
                       </div>
                     </div>
-                    {/* Month 2 Upload */}
+                    {/* Statement 2 Upload */}
                     <div className="row">
                       <div className="col-xl-12">
                         <div className="comment-form__input-box">
-                          <label>Month 2 Bank Statement*</label>
+                          <label>Bank Statement 2*</label>
                           <div
                             className="file-upload-dropzone"
-                            onDrop={(e) => handleDrop(e, "month2")}
+                            onDrop={(e) => handleDrop(e, "statement2")}
                             onDragOver={handleDragOver}
                           >
                             <input
                               type="file"
-                              name="month2"
+                              name="statement2"
                               accept=".pdf"
                               onChange={handleInputChange}
                               required
-                              id="month2"
+                              id="statement2"
                               className="file-upload-input"
                             />
-                            <label htmlFor="month2" className="file-upload-label">
-                              {formData.month2 ? (
-                                <span>{formData.month2.name}</span>
+                            <label htmlFor="statement2" className="file-upload-label">
+                              {formData.statement2 ? (
+                                <span>{formData.statement2.name}</span>
                               ) : (
                                 <span>Drag & drop or click to upload PDF</span>
                               )}
@@ -177,28 +326,28 @@ export default function BankStatement() {
                         </div>
                       </div>
                     </div>
-                    {/* Month 3 Upload */}
+                    {/* Statement 3 Upload */}
                     <div className="row">
                       <div className="col-xl-12">
                         <div className="comment-form__input-box">
-                          <label>Month 3 Bank Statement*</label>
+                          <label>Bank Statement 3*</label>
                           <div
                             className="file-upload-dropzone"
-                            onDrop={(e) => handleDrop(e, "month3")}
+                            onDrop={(e) => handleDrop(e, "statement3")}
                             onDragOver={handleDragOver}
                           >
                             <input
                               type="file"
-                              name="month3"
+                              name="statement3"
                               accept=".pdf"
                               onChange={handleInputChange}
                               required
-                              id="month3"
+                              id="statement3"
                               className="file-upload-input"
                             />
-                            <label htmlFor="month3" className="file-upload-label">
-                              {formData.month3 ? (
-                                <span>{formData.month3.name}</span>
+                            <label htmlFor="statement3" className="file-upload-label">
+                              {formData.statement3 ? (
+                                <span>{formData.statement3.name}</span>
                               ) : (
                                 <span>Drag & drop or click to upload PDF</span>
                               )}
@@ -207,6 +356,38 @@ export default function BankStatement() {
                         </div>
                       </div>
                     </div>
+                    {/* Statement 4 Upload (California only) */}
+                    {formData.isCalifornia && (
+                      <div className="row">
+                        <div className="col-xl-12">
+                          <div className="comment-form__input-box">
+                            <label>Bank Statement 4*</label>
+                            <div
+                              className="file-upload-dropzone"
+                              onDrop={(e) => handleDrop(e, "statement4")}
+                              onDragOver={handleDragOver}
+                            >
+                              <input
+                                type="file"
+                                name="statement4"
+                                accept=".pdf"
+                                onChange={handleInputChange}
+                                required
+                                id="statement4"
+                                className="file-upload-input"
+                              />
+                              <label htmlFor="statement4" className="file-upload-label">
+                                {formData.statement4 ? (
+                                  <span>{formData.statement4.name}</span>
+                                ) : (
+                                  <span>Drag & drop or click to upload PDF</span>
+                                )}
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                     {/* Consent Checkbox */}
                     <div className="row">
                       <div className="col-xl-12">
