@@ -67,12 +67,14 @@ export default function Banner() {
     </h2>
   </div>
   <p className="main-slider__text">
-  Get fast access to SBA loans, term loans, and more with a simple <br />5-minute application. Secure $5,000-$2M in funding without <br />a hard credit check.
+  Get business funding up to $2M without a hard credit check. <br />Application only takes 2 minutes <br />
   </p>
 </div>
-                  <div className="main-slider__ratting">
-                    <img src="assets/images/resources/Trustpilot.webp" />
-                  </div>
+<div className="main-slider__ratting">
+  <Link href="https://www.trustpilot.com/review/elitefunders.com" target="_blank">
+    <img src="assets/images/resources/Trustpilot.webp" alt="Trustpilot" />
+  </Link>
+</div>
                   <div className="main-slider__btn-and-ratting-box">
                     <div className="main-slider__btn-box">
                       <Link
@@ -82,7 +84,7 @@ export default function Banner() {
                           borderRadius: "50rem",
                         }}
                       >
-                        Get Funded
+                        See Loan Options
                       </Link>
                     </div>
                   </div>

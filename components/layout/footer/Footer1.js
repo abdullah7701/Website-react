@@ -62,21 +62,12 @@ export default function Footer1() {
                       <h3 className="footer-widget__title">Navigation</h3>
                     </div>
                     <ul className="footer-widget__navigation-list list-unstyled">
-                      <li>
-                        <Link href="index">Home</Link>
-                      </li>
-                      <li>
-                        <Link href="about">About Us</Link>
-                      </li>
-                      <li>
-                        <Link href="Funding">Services</Link>
-                      </li>
-                      <li>
-                        <Link href="contact">Contact Us</Link>
-                      </li>
-                      <li>
-                        <Link href="blog">Our Blog</Link>
-                      </li>
+                    <li>
+                      <Link href="/terms-of-service">Terms of Service</Link>
+                    </li>
+                    <li>
+                      <Link href="/privacy-policy">Privacy Policy</Link>
+                    </li>
                     </ul>
                   </div>
                 </div>
@@ -89,12 +80,21 @@ export default function Footer1() {
                       <h3 className="footer-widget__title">Quick Link</h3>
                     </div>
                     <ul className="footer-widget__navigation-list list-unstyled">
-                      <li>
-                        <Link href="about">Help</Link>
-                      </li>
-                      <li>
-                        <Link href="contact">Support</Link>
-                      </li>
+                    <li>
+                      <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link href="/about-us">About Us</Link>
+                    </li>
+                    <li>
+                      <Link href="/requently-asked-questions">FAQ</Link>
+                    </li>
+                    <li>
+                      <Link href="/partner-with-us-2">Partner With Us</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact-us">Contact Us</Link>
+                    </li>
                       {/* <li>
                         <Link href="testimonial">Clients</Link>
                       </li>

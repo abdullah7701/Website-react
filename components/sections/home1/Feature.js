@@ -4,7 +4,7 @@ export default function Feature() {
     <>
       <section className="feature-one">
         <div className="container">
-          <div className="row">
+          {/* <div className="row">
             <div className="col-xl-4 col-lg-6 wow fadeInLeft">
               <div className="feature-one__single">
                 <div
@@ -89,7 +89,7 @@ export default function Feature() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

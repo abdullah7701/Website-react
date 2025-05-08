@@ -138,7 +138,7 @@ export default function Faq() {
                           <div className="accrodion-content">
                             <div className="inner">
                               <p>
-                                At Elite Funding Group, we don’t let credit dictate your entire story. We take a holistic approach to understand your credit history and your business’s overall performance.
+                                At Elite Funders, we don’t let credit dictate your entire story. We take a holistic approach to understand your credit history and your business’s overall performance.
                               </p>
                             </div>
                           </div>

@@ -52,7 +52,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-6 col-lg-6">
+              {/* <div className="col-xl-6 col-lg-6">
                 <div className="contact-page__right">
                   <div className="contact-page__img">
                     <img
@@ -61,7 +61,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="contact-page__bottom">
               <div className="comment-form">

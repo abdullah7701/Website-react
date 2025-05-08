@@ -68,8 +68,8 @@ export default function Testimonial() {
               </p>
             </div>
             <h2 className="section-title__title">
-              Why Customers Love
-              <br /> Working With Us
+            Trusted by 
+              <br /> Thousands of Customers
             </h2>
           </div>
           <div className="testimonial-one__bottom">

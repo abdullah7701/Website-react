@@ -14,7 +14,7 @@ export default function Work() {
         <div className="container">
           <div className="section-title text-center">
             <div className="section-title__tagline-box">
-              <p className="section-title__tagline">OUR EASY WORKING STEPS</p>
+              <p className="section-title__tagline">Business Funding Made Easy</p>
             </div>
             <h2 className="section-title__title">
               Our Easy Work Steps
@@ -101,7 +101,7 @@ export default function Work() {
                 </Link>
 
                 <h3 className="work-step-one__title">
-                  <Link href="/apply">Apply</Link>
+                  <Link href="/apply">Apply in Minutes</Link>
                 </h3>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function Work() {
                 </Link>
 
                 <h3 className="work-step-one__title">
-                  <Link href="/apply">Elevate Your Dreams</Link>
+                  <Link href="/apply">Receive Funds </Link>
                 </h3>
               </div>
             </div>

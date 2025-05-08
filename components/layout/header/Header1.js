@@ -7,7 +7,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
     <>
       <header className={`main-header ${scroll ? "fixed-header" : ""}`}>
         <div className="main-header__top">
-          <div className="main-header__top-inner">
+          {/* <div className="main-header__top-inner">
             <ul className="list-unstyled main-header__contact-list">
               <li>
                 <div className="icon">
@@ -47,7 +47,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <nav className="main-menu">
           <div className="main-menu__wrapper">

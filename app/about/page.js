@@ -90,7 +90,7 @@ export default function About() {
                   </div>
                   <div className="feature-one__content">
                     <p className="feature-one__sub-title">
-                      Elite Funding Group
+                      Elite Funders
                     </p>
                     <h3 className="feature-one__title">
                       <Link href="about">First & Reliable</Link>
@@ -124,7 +124,7 @@ export default function About() {
                   </div>
                   <div className="feature-one__content">
                     <p className="feature-one__sub-title">
-                      Elite Funding Group
+                      Elite Funders
                     </p>
                     <h3 className="feature-one__title">
                       <Link href="about">Invest Your Money</Link>
@@ -158,7 +158,7 @@ export default function About() {
                   </div>
                   <div className="feature-one__content">
                     <p className="feature-one__sub-title">
-                      Elite Funding Group
+                      Elite Funders
                     </p>
                     <h3 className="feature-one__title">
                       <Link href="about">Get Your Funding</Link>
@@ -225,7 +225,7 @@ export default function About() {
                   </div>
                   <p className="about-three__text">
                     We believe that flourishing businesses are essential to our
-                    economy and Elite Funding Group provides and alternative to
+                    economy and Elite Funders provides and alternative to
                     traditional banks so you can have peace of mind and unleash
                     your businesses potential.
                   </p>

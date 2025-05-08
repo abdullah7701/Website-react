@@ -56,14 +56,14 @@ export default function About() {
                       <p>Satisfied Clients</p>
                     </div>
                   </div>
-                  <div className="about-one__video-link">
+                  {/* <div className="about-one__video-link">
                     <a onClick={() => setOpen(true)} className="video-popup">
                       <div className="about-one__video-icon">
                         <span className="fa fa-play"></span>
                         <i className="ripple"></i>
                       </div>
                     </a>
-                  </div>
+                  </div> */}
                   <div className="about-one__shape-1 float-bob-x">
                     <img
                       src="assets/images/shapes/about-one-shape-1.png"
@@ -86,7 +86,7 @@ export default function About() {
                 </div>
                 <p className="about-one__text-1">
                   We believe that flourishing businesses are essential to our
-                  economy and Elite Funding Group provides and alternative to
+                  economy and Elite Funders provides and alternative to
                   traditional banks so you can have peace of mind and unleash
                   your businesses potential.
                 </p>

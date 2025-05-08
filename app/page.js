@@ -27,7 +27,7 @@ export default function Home() {
         <Feature />
         <About />
         {/* <Funfacts /> */}
-        <Service />
+        {/* <Service /> */}
         <WhyChooseUs />
         {/* <Video /> */}
         <Work />

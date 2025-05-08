@@ -1530,13 +1530,13 @@ const PDFForm = () => {
           </div>
 
           <div className="peragraph">
-            By signing and submitting to Elite Funding Group LLC DBA "Elite
+            By signing and submitting to Elite Funders LLC DBA "Elite
             Funders" this Business Loan Application ("Application"), each of the
             undersigned certifies that (i) I am authorized to apply for business
             financing on behalf of the entity identified above in the Company
             Information section, (ii) the information provided within this
             Application is true and accurate and (iii) I will promptly notify
-            Elite Funding Group of any material changes to such information.
+            Elite Funders of any material changes to such information.
             This Application must be accompanied by additional supporting
             documents and information as directed by a funder in order to be
             considered for approval. If this Application is approved, the funder

@@ -11,7 +11,7 @@ export default function FunnelHeader({
     <>
       <header className={`main-header ${scroll ? "fixed-header" : ""}`}>
         <div className="main-header__top">
-          <div className="main-header__top-inner">
+          {/* <div className="main-header__top-inner">
             <div className="main-header__top-social-box">
               <p className="main-header__top-social-title">Follow us:</p>
               <div className="main-header__top-social">
@@ -29,7 +29,7 @@ export default function FunnelHeader({
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <nav className="main-menu">
           <div className="main-menu__wrapper">
