@@ -39,9 +39,9 @@ export default function Banner() {
                   alt=""
                 />
               </div>
-              <div className="main-slider__shape-2 img-bounce">
+              {/* <div className="main-slider__shape-2 img-bounce">
                 <img src="assets/images/icon/pricing-one-icon-2.png" alt="" />
-              </div>
+              </div> */}
               <div className="main-slider__shape-3 float-bob-y">
                 <img
                   src="assets/images/shapes/main-slider-shape-3.png"
@@ -58,12 +58,12 @@ export default function Banner() {
   <div className="section-title text-left">
     <div className="section-title__tagline-box">
       <p className="section-title__tagline">
-        RELIABLE. Simple. fAST
+      Fast. Easy. Funded.
       </p>
     </div>
     <h2 className="section-title__title" style={{ fontFamily: 'Arial' }}>
-      Quick Business
-      <br /> Funding
+    Business Funding
+      <br /> Made Simple
     </h2>
   </div>
   <p className="main-slider__text">
@@ -74,6 +74,7 @@ export default function Banner() {
   <Link href="https://www.trustpilot.com/review/elitefunders.com" target="_blank">
     <img src="assets/images/resources/Trustpilot.webp" alt="Trustpilot" />
   </Link>
+  <span>600+ verified reviews</span>
 </div>
                   <div className="main-slider__btn-and-ratting-box">
                     <div className="main-slider__btn-box">
@@ -84,8 +85,9 @@ export default function Banner() {
                           borderRadius: "50rem",
                         }}
                       >
-                        See Loan Options
+                        See My Funding Options
                       </Link>
+                      <span>&nbsp; *No credit impact</span>
                     </div>
                   </div>
                 </div>
