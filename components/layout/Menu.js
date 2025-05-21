@@ -16,6 +16,9 @@ export default function Menu() {
             <li>
               <Link href="/sba-loans">SBA Loans</Link>
             </li>
+            <li>
+              <Link href="/merchant-cash-advance">Merchant Cash Advance</Link>
+            </li>
           </ul>
         </li>
         <li className="dropdown">
@@ -28,7 +31,7 @@ export default function Menu() {
               <Link href="/requently-asked-questions">FAQ</Link>
             </li>
             <li>
-          <Link href="/bank-statement">Upload Bank Statement</Link>
+              <Link href="/bank-statement">Upload Bank Statement</Link>
             </li>
           </ul>
         </li>
@@ -39,7 +42,7 @@ export default function Menu() {
           <Link href="/contact-us">Contact Us</Link>
         </li>
         <li>
-        <Link href="tel:8883431156">(888) 343-1156</Link>
+          <Link href="tel:8883431156">(888) 343-1156</Link>
         </li>
       </ul>
     </>
