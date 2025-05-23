@@ -2098,7 +2098,8 @@
   }
 
   .main-slider .item {
-    padding-bottom: 158px;
+    padding-bottom: 138px;
+    padding-top: 40px;
   }
 
   .main-slider-two .owl-theme .owl-dots,

@@ -9,7 +9,7 @@ import "swiper/css/free-mode";
 import { syne, dm_sans } from "@/lib/font";
 
 export const metadata = {
-  title: "Elite-Funders",
+  title: "Elite Funders - Business Loans",
   description: "Small Business Loans in Minutes",
 };
 

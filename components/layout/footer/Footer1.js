@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Footer1() {
   return (
     <>
@@ -30,12 +31,11 @@ export default function Footer1() {
                         </span>
                       </Link>
                     </div>
-
                     <p className="footer-widget__about-text">
                       9840 S.W 77th Ave, ste 203 <br /> Miami, FL, 33156
                     </p>
                     <div className="footer-widget__emergency-call">
-                      <Link href="tel:+134353353545">+1 888-343-1156</Link>
+                      <Link href="tel:+18883431156">+1 888-343-1156</Link>
                     </div>
                     <div className="footer-widget__social">
                       <Link href="#">
@@ -62,12 +62,12 @@ export default function Footer1() {
                       <h3 className="footer-widget__title">Navigation</h3>
                     </div>
                     <ul className="footer-widget__navigation-list list-unstyled">
-                    <li>
-                      <Link href="/terms-of-service">Terms of Service</Link>
-                    </li>
-                    <li>
-                      <Link href="/privacy-policy">Privacy Policy</Link>
-                    </li>
+                      <li>
+                        <Link href="/terms-of-service">Terms of Service</Link>
+                      </li>
+                      <li>
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -75,65 +75,70 @@ export default function Footer1() {
                   className="col-xl-2 col-lg-6 col-md-6 wow fadeInUp"
                   data-wow-delay="300ms"
                 >
-                  <div className="footer-widget__column footer-widget__quick-link">
+                  <div className="footer-widget__column footer-widget__company">
                     <div className="footer-widget__title-box">
-                      <h3 className="footer-widget__title">Quick Link</h3>
+                      <h3 className="footer-widget__title">Company</h3>
                     </div>
                     <ul className="footer-widget__navigation-list list-unstyled">
-                    <li>
-                      <Link href="/">Home</Link>
-                    </li>
-                    <li>
-                      <Link href="/about-us">About Us</Link>
-                    </li>
-                    <li>
-                      <Link href="/requently-asked-questions">FAQ</Link>
-                    </li>
-                    <li>
-                      <Link href="/partner-with-us-2">Partner With Us</Link>
-                    </li>
-                    <li>
-                      <Link href="/contact-us">Contact Us</Link>
-                    </li>
-                      {/* <li>
-                        <Link href="testimonial">Clients</Link>
+                      <li>
+                        <Link href="/about-us">About Us</Link>
                       </li>
                       <li>
-                        <Link href="products">Shop</Link>
+                        <Link href="/contact-us">Contact Us</Link>
                       </li>
                       <li>
-                        <Link href="portfolio">Portfolio</Link> */}
-                      {/* </li> */}
+                        <Link href="/partnerships">Partnerships</Link>
+                      </li>
+                      <li>
+                        <Link href="/requently-asked-questions">FAQs</Link>
+                      </li>
+                      <li>
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                      </li>
+                      <li>
+                        <Link href="/terms-of-service">Terms of Service</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <div
-                  className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                  data-wow-delay="300ms"
+                  className="col-xl-2 col-lg-6 col-md-6 wow fadeInUp"
+                  data-wow-delay="400ms"
                 >
-                  <div className="footer-widget__column footer-widget__newsletter">
+                  <div className="footer-widget__column footer-widget__products">
                     <div className="footer-widget__title-box">
-                      <h3 className="footer-widget__title"></h3>
+                      <h3 className="footer-widget__title">Products</h3>
                     </div>
-                    <p className="footer-widget__newsletter-text">
-                      Subscribe our newsletter to get the
-                      <br /> latest news & updates
-                    </p>
-                    <form className="footer-widget__newsletter-form">
-                      <div className="footer-widget__newsletter-input-box">
-                        <input
-                          type="email"
-                          placeholder="email@example.com"
-                          name="email"
-                        />
-                        <button
-                          type="submit"
-                          className="footer-widget__newsletter-btn"
-                        >
-                          <i className="icon-send"></i>
-                        </button>
-                      </div>
-                    </form>
+                    <ul className="footer-widget__navigation-list list-unstyled">
+                      <li>
+                        <Link href="/merchant-cash-advance">Merchant Cash Advances</Link>
+                      </li>
+                      <li>
+                        <Link href="/revenue-based-financing">Revenue Based Financing</Link>
+                      </li>
+                      <li>
+                        <Link href="/term-loans">Term Loans</Link>
+                      </li>
+                      <li>
+                        <Link href="/business-lines-of-credit">Business Lines of Credit</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  className="col-xl-2 col-lg-6 col-md-6 wow fadeInUp"
+                  data-wow-delay="500ms"
+                >
+                  <div className="footer-widget__column footer-widget__trustpilot">
+                    <div className="footer-widget__title-box">
+                      <h3 className="footer-widget__title">Trusted by Thousands</h3>
+                    </div>
+                    <div className="main-slider__ratting">
+                      <Link href="https://www.trustpilot.com/review/elitefunders.com" target="_blank">
+                        <img src="assets/images/resources/Trustpilot.webp" alt="Trustpilot" />
+                      </Link>
+                      <span style={{ color: "white" }}>600+ verified reviews</span>
+                    </div>
                   </div>
                 </div>
               </div>

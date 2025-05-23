@@ -2477,7 +2477,7 @@ button:hover {
 
 .main-slider .item {
   position: relative;
-  padding-top: 166px;
+  padding-top: 136px;
   padding-bottom: 177px;
   z-index: 10;
 }
@@ -13182,40 +13182,56 @@ Project Style1
 .page-header {
   position: relative;
   display: block;
-  padding: 216px 0 216px;
-  overflow: hidden;
+  padding: 100px 0; /* Slightly increased from 80px for a balanced height with effects */
   z-index: 1;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Elegant gradient */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures effects stay contained */
 }
 
-.page-header__bg {
+.page-header::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: pulse 10s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.5); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0.5); }
 }
 
 .page-header__inner {
   position: relative;
   display: block;
+  z-index: 1; /* Ensure content is above the background effect */
 }
 
 .page-header__inner h2 {
-  font-size: 48px;
+  font-size: 42px; /* Slightly larger for impact */
   font-weight: 700;
-  line-height: 57px;
-  color: var(--Sonchoy-black);
-  letter-spacing: -0.04em;
+  line-height: 50px;
+  color: #ffffff; /* White text for contrast against gradient */
+  letter-spacing: -0.02em;
+  text-transform: uppercase; /* Adds a bold, modern touch */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+  margin-bottom: 15px; /* Increased spacing for balance */
 }
 
 .thm-breadcrumb__box {
   position: relative;
   display: inline-block;
   z-index: 1;
+  background: rgba(255, 255, 255, 0.1); /* Slight background for breadcrumb */
+  padding: 8px 15px;
+  border-radius: 20px; /* Rounded edges for a modern look */
 }
 
 .thm-breadcrumb {
@@ -13226,31 +13242,35 @@ Project Style1
 .thm-breadcrumb li {
   position: relative;
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  color: var(--Sonchoy-black);
+  color: #ffffff; /* White text for contrast */
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  margin: 0 8px; /* Spacing between items */
 }
 
 .thm-breadcrumb li:nth-child(2) {
-  color: var(--Sonchoy-base);
+  color: #d1e8ff; /* Lighter shade for separator */
 }
 
 .thm-breadcrumb li span {
   margin: 0 5px;
+  color: #d1e8ff; /* Match separator color */
 }
 
 .thm-breadcrumb li a {
   position: relative;
   display: inline-block;
-  color: var(--Sonchoy-base);
+  color: #d1e8ff; /* Lighter shade for links */
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  text-decoration: none; /* Remove underline */
 }
 
 .thm-breadcrumb li:hover a {
-  color: var(--Sonchoy-black);
+  color: #ffffff; /* White on hover for emphasis */
+  text-decoration: underline; /* Underline on hover for interactivity */
 }
 
 /*--------------------------------------------------------------

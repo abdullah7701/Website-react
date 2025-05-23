@@ -5,7 +5,7 @@ export default function Menu() {
     <>
       <ul className="main-menu__list">
         <li className="dropdown">
-          <Link href="/">Services</Link>
+          <Link href="/">Products</Link>
           <ul>
             <li>
               <Link href="/revenue-based-financing">Revenue Based Financing</Link>
@@ -19,24 +19,27 @@ export default function Menu() {
             <li>
               <Link href="/merchant-cash-advance">Merchant Cash Advance</Link>
             </li>
+            <li>
+              <Link href="/business-lines-of-credit">Business Lines of Credit</Link>
+            </li>
           </ul>
         </li>
         <li className="dropdown">
           <Link href="/">Resources</Link>
           <ul>
             <li>
-              <Link href="/about-us">About Elite Funder</Link>
+              <Link href="/about-us">About us</Link>
             </li>
             <li>
-              <Link href="/requently-asked-questions">FAQ</Link>
+              <Link href="/requently-asked-questions">FAQs</Link>
             </li>
             <li>
-              <Link href="/bank-statement">Upload Bank Statement</Link>
+              <Link href="/bank-statement">Upload Bank Statements</Link>
             </li>
           </ul>
         </li>
         <li>
-          <Link href="/partner-with-us-2">Partner With Us</Link>
+          <Link href="/partnerships">Partnerships</Link>
         </li>
         <li>
           <Link href="/contact-us">Contact Us</Link>

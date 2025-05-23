@@ -19,6 +19,7 @@ export default function Faq() {
       });
     }
   };
+
   return (
     <>
       {/* FAQ One Start  */}
@@ -76,162 +77,176 @@ export default function Faq() {
                 </div>
                 <div
                   className="accrodion-grp faq-one-accrodion"
-                  data-grp-name="faq-one-accrodion-1">
+                  data-grp-name="faq-one-accrodion-1"
+                >
                   <div
                     className={
                       isActive.key == 1 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(1)}>
+                    onClick={() => handleToggle(1)}
+                  >
                     <div className="accrodion-title">
-                      <h4>How does Get Funding with EFG work?</h4>
+                      <h4>Will applying affect my credit?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          With no fixed payments, it’s pay as you go! We collect
-                          a predetermined percentage of your sales, so as your
-                          sales fluctuate, your payments adjust accordingly.
-                          Reconcile payments based on sales daily, weekly, or
-                          monthly for ultimate flexibility.
+                          No. We only use a soft credit pull to check your eligibility, which means there’s absolutely no impact on your credit score.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 2 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(2)}>
+                    onClick={() => handleToggle(2)}
+                  >
                     <div className="accrodion-title">
-                      <h4>Is Get Funding secure?</h4>
+                      <h4>How fast can I get funded?</h4>
                     </div>
-                    <div
-                      className="accrodion-content"
-                      onClick={() => handleToggle(2)}>
+                    <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          Rest assured, your information is secure with us.
-                          Learn more in our Privacy Policy.
+                          You can get approved the same day and funded in as little as 24–48 hours after selecting your offer.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 3 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(3)}>
+                    onClick={() => handleToggle(3)}
+                  >
                     <div className="accrodion-title">
-                      <h4>What documents are required for funding?</h4>
+                      <h4>What do I need to apply?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          All you need are a few documents showcasing your
-                          business performance and the last 4 months of business
-                          bank statements. Ready to get started? Apply here.
+                          You’ll just need your business details and 3–6 months of recent bank statements. No collateral or lengthy paperwork required.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 4 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(4)}>
+                    onClick={() => handleToggle(4)}
+                  >
                     <div className="accrodion-title">
-                      <h4>How does credit impact my application?</h4>
+                      <h4>How much can I get approved for?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          At Elite Funders, we don’t let credit dictate
-                          your entire story. We take a holistic approach to
-                          understand your credit history and your business’s
-                          overall performance.
+                          You can get approved for anywhere from $5,000 to $2,000,000, based on your business’s revenue, cash flow, and deposit activity.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 5 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(5)}>
+                    onClick={() => handleToggle(5)}
+                  >
                     <div className="accrodion-title">
-                      <h4>How soon will I have access to funds?</h4>
+                      <h4>Can I get funding if I already have other loans or advances?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          Access funds within 24 hours, sometimes even sooner,
-                          once you’ve completed the funding process.
+                          Yes. Many of our lenders offer second, third, or even fourth position funding—even if you already have active advances—depending on your cash flow.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 6 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(6)}>
+                    onClick={() => handleToggle(6)}
+                  >
                     <div className="accrodion-title">
-                      <h4>How are repayments made?</h4>
+                      <h4>How do repayments work?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          Repayments are made via ACH from your Business Bank
-                          Account or through Credit Cards, delivering the
-                          specified percentage of receivables on a daily basis.
+                          Most repayment plans involve daily or weekly ACH deductions, automatically pulled from your business account. We’ll match you with a program that fits your cash flow.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 7 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(7)}>
+                    onClick={() => handleToggle(7)}
+                  >
                     <div className="accrodion-title">
-                      <h4>What can the funds be used for?</h4>
+                      <h4>Why choose Elite Funders?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          Use the funds for various business purposes, putting
-                          you in control of your business’s growth and success –
-                          whether it’s payroll, remodeling, inventory, capital
-                          expansion, marketing, or equipment.
+                          Elite Funders gives you access to 100+ trusted lenders, fast approvals, and personalized support—all with one application and zero pressure.
                         </p>
                       </div>
-                      {/*  /.inner  */}
                     </div>
                   </div>
                   <div
                     className={
                       isActive.key == 8 ? "accrodion active" : "accrodion"
                     }
-                    onClick={() => handleToggle(8)}>
+                    onClick={() => handleToggle(8)}
+                  >
                     <div className="accrodion-title">
-                      <h4>Why choose EFG over traditional banks?</h4>
+                      <h4>Do I need collateral?</h4>
                     </div>
                     <div className="accrodion-content">
                       <div className="inner">
                         <p>
-                          We offer a quick and flexible product without interest
-                          or late fees. While not the cheapest option, our
-                          process is simple – we provide cash today, and you
-                          repay as you generate revenue.
+                          No. Most of our programs are unsecured, which means you don’t need to pledge any assets or collateral to qualify.
                         </p>
                       </div>
-                      {/*  /.inner  */}
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      isActive.key == 9 ? "accrodion active" : "accrodion"
+                    }
+                    onClick={() => handleToggle(9)}
+                  >
+                    <div className="accrodion-title">
+                      <h4>Can I apply with bad credit?</h4>
+                    </div>
+                    <div className="accrodion-content">
+                      <div className="inner">
+                        <p>
+                          Yes. Even if your credit isn’t perfect, we work with lenders who focus more on your revenue and business performance.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      isActive.key == 10 ? "accrodion active" : "accrodion"
+                    }
+                    onClick={() => handleToggle(10)}
+                  >
+                    <div className="accrodion-title">
+                      <h4>What can I use the funds for?</h4>
+                    </div>
+                    <div className="accrodion-content">
+                      <div className="inner">
+                        <p>
+                          Use your funds for whatever your business needs—payroll, inventory, marketing, equipment, or growth. It’s your capital, your way.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

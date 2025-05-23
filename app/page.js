@@ -30,10 +30,10 @@ export default function Home() {
         {/* <Service /> */}
         <WhyChooseUs />
         {/* <Video /> */}
-        <Work />
+        {/* <Work /> */}
         <Faq />
         <Testimonial />
-        <Quote />
+        {/* <Quote /> */}
         {/* <Brand /> */}
         {/* <Blog /> */}
       </Layout>
