@@ -113,7 +113,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
               <div className="main-menu__wrapper-inner">
                 <div className="main-menu__left">
                   <div className="main-menu__logo">
-                    <Link href="apply">
+                    <Link href="https://app.elitefunders.com">
                       <Image
                         width="68"
                         height="68"
@@ -147,7 +147,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                     </Link>
                   </div>
                   <div className="main-menu__btn-box">
-                    <Link href="apply" className="main-menu__btn thm-btn">
+                    <Link href="https://app.elitefunders.com" className="main-menu__btn thm-btn">
                       APPLY NOW
                     </Link>
                   </div>

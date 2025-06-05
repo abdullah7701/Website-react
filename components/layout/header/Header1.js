@@ -81,7 +81,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
               </div>
               <div className="main-menu__right">
                 <div className="main-menu__btn-box">
-                  <Link href="/apply" className="main-menu__btn thm-btn">
+                  <Link href="https://app.elitefunders.com" className="main-menu__btn thm-btn">
                     APPLY NOW
                   </Link>
                 </div>
@@ -130,7 +130,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
                 </div>
                 <div className="main-menu__right">
                   <div className="main-menu__btn-box">
-                    <Link href="/apply" className="main-menu__btn thm-btn">
+                    <Link href="https://app.elitefunders.com" className="main-menu__btn thm-btn">
                       APPLY NOW
                     </Link>
                   </div>

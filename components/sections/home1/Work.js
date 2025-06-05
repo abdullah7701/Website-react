@@ -28,7 +28,7 @@ export default function Work() {
               data-wow-delay="100ms"
             >
               <div className="work-step-one__single">
-                <Link href="/apply">
+                <Link href="https://app.elitefunders.com">
                   <div className="work-step-one__icon">
                     <span className="icon-risk-management"></span>
                     <div className="work-step-one__shape-1">
@@ -59,7 +59,7 @@ export default function Work() {
                 </Link>
 
                 <h3 className="work-step-one__title">
-                  <Link href="/apply">Select Business</Link>
+                  <Link href="https://app.elitefunders.com">Select Business</Link>
                 </h3>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function Work() {
               data-wow-delay="300ms"
             >
               <div className="work-step-one__single">
-                <Link href="/apply">
+                <Link href="https://app.elitefunders.com">
                   <div className="work-step-one__icon">
                     <span className="icon-talk"></span>
                     <div className="work-step-one__shape-1">
@@ -101,7 +101,7 @@ export default function Work() {
                 </Link>
 
                 <h3 className="work-step-one__title">
-                  <Link href="/apply">Apply in Minutes</Link>
+                  <Link href="https://app.elitefunders.com">Apply in Minutes</Link>
                 </h3>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function Work() {
               data-wow-delay="600ms"
             >
               <div className="work-step-one__single">
-                <Link href="/apply">
+                <Link href="https://app.elitefunders.com">
                   <div className="work-step-one__icon">
                     <span className="icon-problem-solving"></span>
                     <div className="work-step-one__shape-1">
@@ -143,7 +143,7 @@ export default function Work() {
                 </Link>
 
                 <h3 className="work-step-one__title">
-                  <Link href="/apply">Get Your Funding</Link>
+                  <Link href="https://app.elitefunders.com">Get Your Funding</Link>
                 </h3>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function Work() {
               data-wow-delay="900ms"
             >
               <div className="work-step-one__single">
-                <Link href="/apply">
+                <Link href="https://app.elitefunders.com">
                   <div className="work-step-one__icon">
                     <span className="icon-healthcare"></span>
                     <div className="work-step-one__shape-1">
@@ -185,7 +185,7 @@ export default function Work() {
                 </Link>
 
                 <h3 className="work-step-one__title">
-                  <Link href="/apply">Receive Funds </Link>
+                  <Link href="https://app.elitefunders.com">Receive Funds </Link>
                 </h3>
               </div>
             </div>

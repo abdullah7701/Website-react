@@ -79,7 +79,7 @@ export default function Banner() {
                   <div className="main-slider__btn-and-ratting-box">
                     <div className="main-slider__btn-box">
                       <Link
-                        href="apply"
+                        href="https://app.elitefunders.com"
                         className="main-slider__btn thm-btn "
                         style={{
                           borderRadius: "50rem",

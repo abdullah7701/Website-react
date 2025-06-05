@@ -27,7 +27,7 @@ export default function TermLoans() {
                   {/* Centered Apply Now Button */}
                   <div className="about-three__btn-and-client" style={{ textAlign: 'center', margin: '30px 0' }}>
                     <div className="about-three__btn-box">
-                      <Link href="/apply" className="about-three__btn thm-btn">
+                      <Link href="https://app.elitefunders.com" className="about-three__btn thm-btn">
                         Apply Now
                       </Link>
                     </div>
