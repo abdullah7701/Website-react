@@ -1,15 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true, // Keep if using App Router
-    // Comment out or remove these
-    // serverComponentsExternalPackages: [
-    //   "puppeteer",
-    //   "puppeteer-core",
-    //   "@sparticuz/chromium",
-    // ],
-    // esmExternals: "loose",
-  },
+  // App Router is enabled by default in Next.js 13+ when using the app directory
+  // No need to specify appDir anymore
+  
+
 };
 
 module.exports = nextConfig;
