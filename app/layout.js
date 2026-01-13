@@ -17,6 +17,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dm_sans.variable} ${syne.variable}`}>
       <head>
+        {/* --- GOOGLE ANALYTICS TAG --- */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7N7MCSJKXK"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7N7MCSJKXK');
+            `,
+          }}
+        />
         {/* --- HYROS SCRIPT --- */}
         <script
           dangerouslySetInnerHTML={{
