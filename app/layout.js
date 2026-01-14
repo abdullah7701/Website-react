@@ -32,6 +32,23 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        
+        {/* --- GOOGLE ADS CONVERSION TAG --- */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17795274639"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17795274639');
+            `,
+          }}
+        />
+
         {/* --- HYROS SCRIPT --- */}
         <script
           dangerouslySetInnerHTML={{
