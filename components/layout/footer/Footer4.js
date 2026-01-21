@@ -28,7 +28,7 @@ export default function Footer4() {
                       <br /> Mahall Damietta Egypt-104
                     </p>
                     <div className="footer-widget__emergency-call">
-                      <Link href="tel:+134353353545">+1 888-343-1156</Link>
+                      <Link href="tel:+18888965559">+1 888-896-5559</Link>
                     </div>
                     <div className="footer-widget__social">
                       <Link href="#">

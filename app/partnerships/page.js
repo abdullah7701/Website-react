@@ -86,7 +86,7 @@ export default function PartnerWithUs() {
                     <div className="about-three__contact">
                       <h3 className="about-three__sub-title">Contact Us</h3>
                       <p className="about-three__text">
-                        <strong>📞</strong> (888) 343-1156<br />
+                        <strong>📞</strong> (888) 896-5559<br />
                         <strong>📧</strong> <Link href="mailto:Partnerships@EliteFunders.com">Partnerships@EliteFunders.com</Link><br />
                         <strong>🕒</strong> 9 am – 6 pm (Monday – Friday)
                       </p>

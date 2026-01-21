@@ -28,7 +28,7 @@ export default function Home() {
                       <li>
                         <h5>Phone</h5>
                         <p>
-                          <Link href="tel:09354587874">888-343-1156</Link>
+                          <Link href="tel:8888965559">888-896-5559</Link>
                           {/* <span>or</span>
                           <Link href="tel:10698852741">10 (698) 852 741</Link> */}
                         </p>

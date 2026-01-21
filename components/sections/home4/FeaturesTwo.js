@@ -17,7 +17,7 @@ export default function FeaturesTwo() {
                   </div>
                   <div className="content">
                     <p>Call Us Free</p>
-                    <Link href="tel:+99932565894561">+1 888-343-1156 4561</Link>
+                    <Link href="tel:+18888965559">+1 888-896-5559</Link>
                   </div>
                 </div>
               </div>
