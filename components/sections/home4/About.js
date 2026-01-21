@@ -109,7 +109,7 @@ export default function About() {
                     <div className="content">
                       <span>Call Us Free</span>
                       <p>
-                        <Link href="tel:+9993256589">+1 888-343-1156</Link>
+                        <Link href="tel:+18888965559">+1 888-896-5559</Link>
                       </p>
                     </div>
                   </div>

@@ -35,7 +35,7 @@ export default function Footer1() {
                       9840 S.W 77th Ave, ste 203 <br /> Miami, FL, 33156
                     </p>
                     <div className="footer-widget__emergency-call">
-                      <Link href="tel:+18883431156">+1 888-343-1156</Link>
+                      <Link href="tel:+18888965559">+1 888-896-5559</Link>
                     </div>
                     <div className="footer-widget__social">
                       <Link href="#">
