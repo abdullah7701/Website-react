@@ -48,7 +48,7 @@ export default function Menu() {
           <Link href="/contact-us">Contact Us</Link>
         </li>
         <li>
-          <Link href="tel:8883431156">(888) 343-1156</Link>
+          <Link href="tel:18888965559">(888) 896-5559</Link>
         </li>
       </ul>
     </>

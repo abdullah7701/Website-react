@@ -169,7 +169,7 @@ export default function PrivacyPolicy() {
                       9840 SW 77th Ave, STE 203<br />
                       Miami, FL 33156<br />
                       <Link href="mailto:privacy@elitefunders.com">privacy@elitefunders.com</Link><br />
-                      <Link href="tel:8888965559">(888) 896-5559</Link><br />
+                      <Link href="tel:18888965559">+1 (888) 896-5559</Link><br />
                       <Link href="tel:18883431156">+1 (888) 343-1156</Link>
                     </p>
                   </div>
