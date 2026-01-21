@@ -131,7 +131,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                   <Link href="/contact-us">Contact Us</Link>
                 </li>
                 <li>
-                  <Link href="tel:8883431156">(888) 343-1156</Link>
+                  <Link href="tel:18888965559">+1 (888) 896-5559</Link>
                 </li>
               </ul>
             </div>
@@ -145,7 +145,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
             </li>
             <li>
               <i className="fa fa-phone-alt"></i>
-              <a href="tel:8883431156">(888) 343-1156</a>
+              <a href="tel:18888965559">+1 (888) 896-5559</a>
             </li>
           </ul>
           <div className="mobile-nav__top">

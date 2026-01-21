@@ -72,7 +72,7 @@ export default function AboutEliteFunders() {
                     <div className="about-three__contact">
                       <h3 className="about-three__sub-title">Get in Touch</h3>
                       <p className="about-three__text">
-                        <strong>📞</strong> (888) 343-1156<br />
+                        <strong>📞</strong> (888) 896-5559<br />
                         <strong>📧</strong> CustomerService@EliteFunders.com<br />
                         <strong>🕒</strong> 9 am – 6 pm (Monday – Friday)
                       </p>
