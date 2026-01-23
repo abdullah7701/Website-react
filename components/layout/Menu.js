@@ -13,9 +13,7 @@ export default function Menu() {
             <li>
               <Link href="/term-loans">Term Loans</Link>
             </li>
-            <li>
-              <Link href="/sms-terms">SMS Terms</Link>
-            </li>
+           
             <li>
               <Link href="/sba-loans">SBA Loans</Link>
             </li>
@@ -24,6 +22,9 @@ export default function Menu() {
             </li>
             <li>
               <Link href="/business-lines-of-credit">Business Lines of Credit</Link>
+            </li>
+             <li>
+              <Link href="/sms-terms">SMS Terms</Link>
             </li>
           </ul>
         </li>
