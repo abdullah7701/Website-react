@@ -69,8 +69,8 @@ export default function Footer1() {
                         <Link href="/privacy-policy">Privacy Policy</Link>
                       </li>
                        <li>
-              <Link href="/sms-terms">SMS Terms</Link>
-            </li>
+                        <Link href="/sms-terms">SMS Terms</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>

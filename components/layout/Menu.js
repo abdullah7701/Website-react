@@ -23,9 +23,6 @@ export default function Menu() {
             <li>
               <Link href="/business-lines-of-credit">Business Lines of Credit</Link>
             </li>
-             <li>
-              <Link href="/sms-terms">SMS Terms</Link>
-            </li>
           </ul>
         </li>
         <li className="dropdown">
